@@ -18,7 +18,7 @@
 set(HARVESTER_PATH ${CMAKE_CURRENT_LIST_DIR} CACHE INTERNAL "")
 
 macro(harvest_package)
-    if(NOT DEFINED $ENV{HARVESTER_HOME})
+    if(NOT DEFINED ENV{HARVESTER_HOME})
         message(FATAL_ERROR "HARVESTER_HOME environment variable is not set")
     endif()
 
