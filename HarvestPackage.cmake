@@ -41,15 +41,6 @@ macro(harvest_package)
                 ${CMAKE_COMMAND}
                     --build ${PROJECT_BINARY_DIR}/${_package_name}
             )
-
-        install(
-            DIRECTORY
-                ${PROJECT_BINARY_DIR}/harvester_install/
-            DESTINATION
-                ${CMAKE_INSTALL_PREFIX}
-            COMPONENT
-                harvester_dependencies
-            )
     endif()
-    find_package(${ARGN} REQUIRED PATHS ${PROJECT_BINARY_DIR}/harvester_install/)
+    find_package(${ARGN} REQUIRED PATHS $ENV{HARVESTER_HOME})
 endmacro()
