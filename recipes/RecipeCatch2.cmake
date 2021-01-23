@@ -21,7 +21,7 @@ ExternalProject_Add(Catch2
     GIT_REPOSITORY
         https://github.com/catchorg/Catch2.git
     GIT_TAG
-        master
+        v2.x
     INSTALL_DIR
         ${RECIPE_INSTALL_PATH}
     CMAKE_CACHE_ARGS
