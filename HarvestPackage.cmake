@@ -25,7 +25,7 @@ macro(harvest_package)
         endif()
     endif()
 
-    find_package(${ARGN} QUIET PATHS ${PROJECT_BINARY_DIR}/harvester_install)
+    find_package(${ARGN} QUIET PATHS $ENV{HARVESTER_HOME})
     set(_package_name ${ARGV0})
     if(NOT ${_package_name}_FOUND)
         execute_process(
@@ -34,7 +34,6 @@ macro(harvest_package)
                     -H${HARVESTER_PATH}/recipes
                     -B${PROJECT_BINARY_DIR}/${_package_name}
                     -DRECIPE_SOURCE=${HARVESTER_PATH}/recipes/Recipe${_package_name}.cmake
-                    -DRECIPE_INSTALL_PATH=${PROJECT_BINARY_DIR}/harvester_install
             )
 
         execute_process(
