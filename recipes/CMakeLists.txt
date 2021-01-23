@@ -17,8 +17,11 @@
 
 cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
-set(RECIPE_SOURCE       . CACHE FILEPATH "Recipe file.")
-set(RECIPE_INSTALL_PATH . CACHE PATH "Recipe install path.")
+if(NOT DEFINED $ENV{HARVESTER_HOME})
+    message(FATAL_ERROR "HARVESTER_HOME")
+endif()
+
+set(RECIPE_SOURCE . CACHE FILEPATH "Recipe file.")
 
 project(recipe LANGUAGES CXX)
 

@@ -25,7 +25,7 @@ ExternalProject_Add(antlr4-generator
     SOURCE_SUBDIR
         ./runtime/Cpp
     INSTALL_DIR
-        ${RECIPE_INSTALL_PATH}
+        $ENV{HARVESTER_HOME}
     CMAKE_CACHE_ARGS
         -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
         -DCMAKE_POSITION_INDEPENDENT_CODE:BOOL=ON
