@@ -17,13 +17,15 @@
 
 include(ExternalProject)
 
-ExternalProject_Add(Catch2
+set(_name Catch2)
+
+ExternalProject_Add(${_name}
     GIT_REPOSITORY
         https://github.com/catchorg/Catch2.git
     GIT_TAG
         v2.x
     INSTALL_DIR
-        $ENV{HARVESTER_HOME}
+        $ENV{HARVESTER_HOME}/${_name}
     CMAKE_CACHE_ARGS
         -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
         -DCATCH_BUILD_TESTING:BOOL=OFF

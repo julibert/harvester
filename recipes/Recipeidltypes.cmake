@@ -17,13 +17,15 @@
 
 include(ExternalProject)
 
-ExternalProject_Add(idltypes
+set(_name idltypes)
+
+ExternalProject_Add(${_name}
     GIT_REPOSITORY
         git@github.com:julibert/idltypes.git
     GIT_TAG
         master
     INSTALL_DIR
-        $ENV{HARVESTER_HOME}
+        $ENV{HARVESTER_HOME}/${_name}
     CMAKE_CACHE_ARGS
         -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
         -DIDLTYPES_BUILD_TESTS:BOOL=OFF

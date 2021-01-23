@@ -17,7 +17,9 @@
 
 include(ExternalProject)
 
-ExternalProject_Add(antlr4-generator
+set(_name antlr4-runtime)
+
+ExternalProject_Add(${_name}
     GIT_REPOSITORY
         https://github.com/julibert/antlr4.git
     GIT_TAG
@@ -25,7 +27,7 @@ ExternalProject_Add(antlr4-generator
     SOURCE_SUBDIR
         ./runtime/Cpp
     INSTALL_DIR
-        $ENV{HARVESTER_HOME}
+        $ENV{HARVESTER_HOME}/${_name}
     CMAKE_CACHE_ARGS
         -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
         -DCMAKE_POSITION_INDEPENDENT_CODE:BOOL=ON
