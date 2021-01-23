@@ -18,7 +18,7 @@
 cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
 if(NOT DEFINED $ENV{HARVESTER_HOME})
-    message(FATAL_ERROR "HARVESTER_HOME")
+    message(FATAL_ERROR "HARVESTER_HOME environment variable is not set")
 endif()
 
 set(RECIPE_SOURCE . CACHE FILEPATH "Recipe file.")
