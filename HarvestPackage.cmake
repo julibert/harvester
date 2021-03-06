@@ -33,7 +33,7 @@ macro(harvest_package)
                 ${CMAKE_COMMAND}
                     -H${HARVESTER_PATH}/recipes
                     -B${PROJECT_BINARY_DIR}/${_package_name}
-                    -DRECIPE_SOURCE=${HARVESTER_PATH}/recipes/Recipe${_package_name}.cmake
+                    -DRECIPE_SOURCE=${HARVESTER_PATH}/recipes/${_package_name}.cmake
             )
 
         execute_process(
